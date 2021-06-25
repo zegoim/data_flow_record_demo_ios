@@ -1,0 +1,87 @@
+//
+//  Global.pch
+//  ZegoRecorderExample
+//
+//  Created by liquan on 2021/4/20.
+//  Copyright © 2021 Zego. All rights reserved.
+//
+
+#ifndef Global_pch
+#define Global_pch
+
+//日志地址
+#define kZegoDocsDataPath [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents/ZegoDocs"] stringByAppendingString:@""]
+#define kZegoLogPath [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/ZegoLogFile"]
+#define kZegoAPPTeminalNotification @"kZegoAPPTeminalNotification"
+
+#define kZegoLogPath [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/ZegoLogFile"]
+#define kZegoImagePath [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/ZegoWhiteBoardImageFile"]
+#define kZegoRecorderPath [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/ZegoRecorderPath"]
+
+
+#define kUserIDKey @"kUserIDKey"
+#define kWhiteboardPageCount 5
+
+//显示区域的宽高占比
+#define kSafeAreaWidth 1280.0
+#define kSafeAreaHeight 720.0
+
+ 
+#define kZegoGetPlayInfoAPI [NSString stringWithFormat:@"%@/get_play_info", [[ZegoLocalEnvManager shareManager] domain]]
+#define kZegoGetTokenAPI [NSString stringWithFormat:@"%@/access_token", [[ZegoLocalEnvManager shareManager] domain]]
+
+
+#ifdef DEBUG
+#define DLog( s, ... ) NSLog( @"<%p %@:(%d)> %@", self, [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+#else
+#define DLog( s, ... )
+#endif
+
+//当前房间服务SDK
+#import "ZegoExpressSDKManager.h"
+#import "KeyCenter.h"
+
+//文件引用
+#import <ZegoDocsView/ZegoDocsView.h>
+#import <ZegoDocsView/ZegoDocsViewManager.h>
+#import <ZegoDocsView/ZegoDocsViewConstants.h>
+#import <ZegoDocsView/ZegoDocsViewConfig.h>
+#import <ZegoDocsView/ZegoDocsViewPage.h>
+#import <ZegoDocsView/ZegoDocsViewCustomH5Config.h>
+
+//record playback SDK
+#import <ZegoRecorderPlayback/zego-api-recorder-playback-oc.h>
+#import <ZegoRecorderPlayback/zego-api-recorder-playback-defines-oc.h>
+
+//express SDK
+#import "ZegoLocalEnvManager.h"
+#import "ZegoBoardServiceManager.h"
+
+//third lib
+#import <Masonry/Masonry.h>
+#import <YYKit/YYKit.h>
+#import <IQKeyboardManager/IQKeyboardManager.h>
+#import "ZegoProgessHUD.h"
+#import <MBProgressHUD.h>
+#import <AFNetworking.h>
+#import <AVFoundation/AVFoundation.h>
+#import <MediaPlayer/MediaPlayer.h>
+
+//category
+#import "UIColor+ZegoExtension.h"
+#import "UIButton+ZegoExtension.h"
+#import "NSString+FormatValidator.h"
+#import "UIWindow+ZegoExtension.h"
+#import "UIViewController+ZegoExtension.h"
+#import "ZegoPlaybackStreamInfo+ZegoExtension.h"
+
+
+#pragma mark - Lifecycle
+#pragma mark - Public Method
+#pragma mark - Action event
+#pragma mark - Delegate
+#pragma mark - Private
+#pragma mark – Config method
+#pragma mark - Set Get method
+
+#endif /* Global_pch__pch */
